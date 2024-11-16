@@ -2,7 +2,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
-  const navigateBack = () => window.location.replace("http://localhost:3000");
+  const navigateBack = () => window.location.replace("http://localhost:81");
 
   return (
     <>

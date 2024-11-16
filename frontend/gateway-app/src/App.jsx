@@ -5,11 +5,11 @@ function App() {
   const listApps = [
     {
       name: "app1",
-      url: "http://localhost:3001",
+      url: "http://localhost:81/app1/",
     },
     {
       name: "app2",
-      url: "http://localhost:3002",
+      url: "http://localhost:81/app2/",
     },
   ];
 
