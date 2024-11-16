@@ -33,16 +33,48 @@
   }
 }
 
-.card {
+.column {
   padding: 2em;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  padding: 0 2em;
+  display: flex;
+}
+
+.text-input {
+  height: 40px;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 20px;
+  margin: auto 10px;
 }
 
 .read-the-docs {
-  color: #888;
+  color: white;
+  margin-top: 60px;
+  padding-top: 6px;
   font-size: 14px;
+  border-top: 1px solid white;
 }
 
 .btn-navigation {
   margin: auto 10px;
   padding: 20px 100px;
+}
+
+.error-message {
+  color: wheat;
+  font-size: 16px;
+  text-align: end;
+  margin-right: 10px;
+  margin-top: 4px;
+}
+
+.text-loading {
+  margin-top: 24px;
+  font-size: 16px;
+  color: white;
 }
