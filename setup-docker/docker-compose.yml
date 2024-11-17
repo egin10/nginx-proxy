@@ -51,8 +51,6 @@ services:
     build:
       context: ../backend/app1
     container_name: be-app1
-    # ports:
-    #   - "78:8000"
     networks:
       - ginproject-network
 
@@ -60,8 +58,6 @@ services:
     build:
       context: ../backend/app2
     container_name: be-app2
-    # ports:
-    #   - "79:8001"
     networks:
       - ginproject-network
     depends_on:
