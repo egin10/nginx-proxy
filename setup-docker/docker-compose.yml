@@ -63,6 +63,54 @@ services:
     depends_on:
       - be-app1
 
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: crud_app
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - ginproject-network
+  
+  be-load1:
+    build:
+      context: ../backend/app-load1
+    container_name: be-load1
+    networks:
+      - ginproject-network
+    depends_on:
+      - postgres
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: user
+      DB_PASSWORD: password
+      DB_NAME: crud_app
+  
+  be-load2:
+    build:
+      context: ../backend/app-load2
+    container_name: be-load2
+    networks:
+      - ginproject-network
+    depends_on:
+      - postgres
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: user
+      DB_PASSWORD: password
+      DB_NAME: crud_app
+
 networks:
   ginproject-network:
     external: true
+
+volumes:
+  postgres_data:
